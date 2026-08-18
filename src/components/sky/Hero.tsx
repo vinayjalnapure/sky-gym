@@ -14,7 +14,7 @@ export function Hero() {
     <section id="home" className="relative min-h-[100svh] w-full overflow-hidden">
       <motion.div
         className="absolute inset-0"
-        style={reduced ? undefined : { y, scale }}
+        style={reduced ? {} : { y, scale }}
       >
         <img
           src={IMAGES.inclinePress}
