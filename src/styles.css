@@ -148,4 +148,65 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Sky Fitness Gym brand tokens */
+:root {
+  --sky: oklch(0.79 0.13 231);
+  --sky-bright: oklch(0.71 0.15 236);
+  --navy: oklch(0.17 0.03 254);
+  --ink: oklch(0.12 0.02 254);
+  --soft: oklch(0.71 0.03 256);
+}
+
+body {
+  background-color: var(--ink);
+  color: oklch(0.98 0.003 248);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+@utility text-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--sky);
+}
+
+@utility glass-panel {
+  background: color-mix(in oklab, var(--navy) 55%, transparent);
+  backdrop-filter: blur(16px);
+  border: 1px solid color-mix(in oklab, var(--sky) 22%, transparent);
+}
+
+@utility sky-glow {
+  box-shadow: 0 0 80px -20px color-mix(in oklab, var(--sky) 55%, transparent);
+}
+
+@utility focus-sky {
+  &:focus-visible {
+    outline: 2px solid var(--sky);
+    outline-offset: 3px;
+  }
 }
