@@ -1,4 +1,4 @@
-import { Dumbbell, CalendarCheck, Flame, Repeat } from "lucide-react";
+import { Dumbbell, CalendarCheck, Flame, Repeat, Apple, ClipboardList } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 const BLOCKS = [
@@ -25,6 +25,18 @@ const BLOCKS = [
     num: "04",
     title: "Build Your Routine",
     copy: "Make fitness part of your lifestyle.",
+  },
+  {
+    icon: Apple,
+    num: "05",
+    title: "Personal Diet Plan",
+    copy: "Nutrition guidance that fuels your progress.",
+  },
+  {
+    icon: ClipboardList,
+    num: "06",
+    title: "Proper Workout Plan",
+    copy: "Structured training built around your goals.",
   },
 ];
 
