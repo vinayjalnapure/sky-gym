@@ -8,14 +8,10 @@ export function Contact() {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Hi ${GYM.name}!%0AName: ${form.name}%0APhone: ${form.phone}%0AMessage: ${form.message}`;
-    window.open(
-      waLink(
-        `Hi ${GYM.name}!\nName: ${form.name}\nPhone: ${form.phone}\nMessage: ${form.message}`,
-      ) || text,
-      "_blank",
-      "noopener,noreferrer",
+    const url = waLink(
+      `Hi ${GYM.name}!\nName: ${form.name}\nPhone: ${form.phone}\nMessage: ${form.message}`,
     );
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   const field =
