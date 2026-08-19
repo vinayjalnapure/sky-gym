@@ -24,8 +24,8 @@ export function Hero() {
           decoding="async"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/25" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/65 to-ink/15" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-transparent" />
 
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center px-5 pt-28 pb-28 sm:px-8">
         <motion.p
@@ -37,8 +37,8 @@ export function Hero() {
           Sky Fitness Gym • Arali, Solapur
         </motion.p>
 
-        <h1 className="text-display mt-5 max-w-4xl text-[3.1rem] leading-[0.92] sm:text-7xl lg:text-8xl">
-          <span className="block overflow-hidden">
+        <h1 className="text-display mt-5 max-w-4xl text-[3.1rem] leading-[1.02] sm:text-7xl lg:text-8xl">
+          <span className="block overflow-hidden pb-[0.06em]">
             <motion.span
               className="block"
               initial={{ y: "110%" }}
@@ -48,7 +48,7 @@ export function Hero() {
               Build Your
             </motion.span>
           </span>
-          <span className="block overflow-hidden">
+          <span className="block overflow-hidden pb-[0.06em]">
             <motion.span
               className="block text-sky"
               initial={{ y: "110%" }}
