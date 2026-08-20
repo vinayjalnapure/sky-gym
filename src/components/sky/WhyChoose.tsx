@@ -42,28 +42,30 @@ const BLOCKS = [
 
 export function WhyChoose() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="section-y">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-3xl">
           <p className="eyebrow">Why choose Sky Fitness</p>
-          <h2 className="text-display mt-4 text-4xl sm:text-6xl lg:text-7xl">
+          <h2 className="text-display mt-3 text-[2.1rem] sm:mt-4 sm:text-6xl lg:text-7xl">
             More than a <span className="text-sky">workout.</span>
           </h2>
         </Reveal>
 
-        <div className="mt-14 divide-y divide-white/10 border-t border-white/10">
+        <div className="mt-8 grid gap-3 sm:mt-14 sm:grid-cols-1 sm:gap-0 sm:divide-y sm:divide-white/10 sm:border-t sm:border-white/10">
           {BLOCKS.map((b, i) => (
             <Reveal key={b.title} delay={i * 0.06}>
-              <div className="group grid grid-cols-[auto_minmax(0,1fr)] items-start gap-5 py-9 transition-colors sm:grid-cols-[5rem_auto_minmax(0,1fr)] sm:gap-8">
-                <span className="text-display text-2xl text-sky/70 sm:text-3xl">{b.num}</span>
+              <div className="group grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4 border border-white/10 bg-navy/40 p-5 transition-colors sm:grid-cols-[4rem_auto_minmax(0,1fr)] sm:gap-8 sm:border-0 sm:bg-transparent sm:p-0 sm:py-9">
                 <b.icon
-                  className="mt-1 hidden h-8 w-8 shrink-0 text-sky transition-transform duration-300 group-hover:scale-110 sm:block"
+                  className="mt-0.5 h-7 w-7 shrink-0 text-sky transition-transform duration-300 group-hover:scale-110 sm:order-2 sm:mt-1 sm:h-8 sm:w-8"
                   aria-hidden="true"
                 />
-                <div className="col-span-2 min-w-0 sm:col-span-1">
-                  <h3 className="text-display text-3xl sm:text-4xl">{b.title}</h3>
-                  <p className="mt-2 text-soft">{b.copy}</p>
+                <div className="min-w-0 sm:order-3">
+                  <h3 className="text-display text-2xl leading-tight sm:text-4xl">{b.title}</h3>
+                  <p className="mt-1.5 text-[0.9rem] text-soft sm:mt-2 sm:text-base">{b.copy}</p>
                 </div>
+                <span className="text-display hidden text-2xl text-sky/70 sm:order-1 sm:block sm:text-3xl">
+                  {b.num}
+                </span>
               </div>
             </Reveal>
           ))}

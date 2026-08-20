@@ -175,6 +175,14 @@ body {
   color: oklch(0.98 0.003 248);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 639px) {
+  body {
+    /* room for the fixed WhatsApp / Call bar */
+    padding-bottom: calc(3.75rem + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 @utility text-display {
@@ -187,11 +195,35 @@ body {
 
 @utility eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--sky);
+
+  @media (min-width: 640px) {
+    font-size: 0.72rem;
+    letter-spacing: 0.26em;
+  }
+}
+
+@utility section-y {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+
+  @media (min-width: 640px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+@utility pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 @utility glass-panel {

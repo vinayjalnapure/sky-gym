@@ -7,7 +7,7 @@ export function FloatingCTA() {
   return (
     <>
       {/* Mobile bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-px border-t border-sky/25 bg-ink/90 backdrop-blur-lg sm:hidden">
+      <div className="pb-safe fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-px border-t border-sky/25 bg-ink/90 backdrop-blur-lg sm:hidden">
         <a
           href={wa}
           target="_blank"

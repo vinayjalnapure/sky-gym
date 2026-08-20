@@ -32,9 +32,9 @@ export function Nav() {
           <img
             src={IMAGES.logo}
             alt="Sky Fitness Gym logo"
-            className="h-10 w-10 shrink-0 rounded-full object-cover ring-1 ring-sky/40"
+            className="h-9 w-9 shrink-0 rounded-full object-cover ring-1 ring-sky/40 sm:h-10 sm:w-10"
           />
-          <span className="text-display truncate text-lg tracking-wide sm:text-xl">
+          <span className="text-display truncate text-base tracking-wide sm:text-xl">
             Sky <span className="text-sky">Fitness</span>
           </span>
         </a>
@@ -103,7 +103,7 @@ export function Nav() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 * i + 0.08, duration: 0.4 }}
-                  className="focus-sky text-display border-b border-white/10 py-5 text-4xl text-white"
+                  className="focus-sky text-display border-b border-white/10 py-4 text-3xl text-white sm:py-5 sm:text-4xl"
                 >
                   {l.label}
                 </motion.a>
