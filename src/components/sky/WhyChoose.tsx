@@ -63,7 +63,7 @@ export function WhyChoose() {
                   <h3 className="text-display text-2xl leading-tight sm:text-4xl">{b.title}</h3>
                   <p className="mt-1.5 text-[0.9rem] text-soft sm:mt-2 sm:text-base">{b.copy}</p>
                 </div>
-                <span className="text-display absolute-none hidden text-2xl text-sky/70 sm:order-1 sm:block sm:text-3xl">
+                <span className="text-display hidden text-2xl text-sky/70 sm:order-1 sm:block sm:text-3xl">
                   {b.num}
                 </span>
               </div>
