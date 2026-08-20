@@ -2,8 +2,8 @@ import { GYM, IMAGES, NAV_LINKS } from "./data";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-ink py-14">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 md:grid-cols-[minmax(0,1fr)_auto]">
+    <footer className="border-t border-white/10 bg-ink py-10 sm:py-14">
+      <div className="mx-auto grid max-w-7xl gap-7 px-5 sm:gap-10 sm:px-8 md:grid-cols-[minmax(0,1fr)_auto]">
         <div className="flex min-w-0 items-start gap-4">
           <img
             src={IMAGES.logo}
@@ -12,7 +12,7 @@ export function Footer() {
             className="h-12 w-12 shrink-0 rounded-full object-cover ring-1 ring-sky/40"
           />
           <div className="min-w-0">
-            <p className="text-display text-2xl">
+            <p className="text-display text-xl sm:text-2xl">
               Sky <span className="text-sky">Fitness Gym</span>
             </p>
             <p className="mt-1 text-sm text-soft">{GYM.area}</p>
@@ -34,7 +34,7 @@ export function Footer() {
           ))}
         </nav>
       </div>
-      <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 px-5 pt-6 sm:px-8">
+      <div className="mx-auto mt-8 max-w-7xl border-t border-white/10 px-5 pt-6 sm:mt-10 sm:px-8">
         <p className="text-xs text-soft">© 2026 Sky Fitness Gym. All rights reserved.</p>
       </div>
     </footer>

@@ -36,17 +36,17 @@ export function Gallery() {
   const active = index === null ? null : GALLERY[index];
 
   return (
-    <section id="gallery" className="py-20 sm:py-28">
+    <section id="gallery" className="section-y">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <p className="eyebrow">Gallery</p>
-          <h2 className="text-display mt-4 text-4xl sm:text-5xl lg:text-6xl">
+          <h2 className="text-display mt-3 text-[2.1rem] sm:mt-4 sm:text-5xl lg:text-6xl">
             Inside <span className="text-sky">Sky Fitness</span>
           </h2>
-          <p className="mt-4 text-soft">See the environment. Feel the energy.</p>
+          <p className="mt-3 text-[0.9rem] text-soft sm:mt-4 sm:text-base">See the environment. Feel the energy.</p>
         </Reveal>
 
-        <div className="mt-12 grid auto-rows-[190px] grid-cols-2 gap-3 sm:auto-rows-[220px] sm:gap-4 lg:grid-cols-4">
+        <div className="mt-8 grid auto-rows-[130px] grid-cols-2 gap-2.5 sm:mt-12 sm:auto-rows-[220px] sm:gap-4 lg:grid-cols-4">
           {GALLERY.map((img, i) => {
             const span =
               i === 0
@@ -141,7 +141,7 @@ export function Gallery() {
               src={active.src}
               alt={active.alt}
               onClick={(e) => e.stopPropagation()}
-              className="max-h-[82svh] w-auto max-w-full object-contain"
+              className="max-h-[76svh] w-auto max-w-full object-contain"
             />
           </motion.div>
         )}

@@ -37,7 +37,7 @@ export function Hero() {
           Sky Fitness Gym • Arali, Solapur
         </motion.p>
 
-        <h1 className="text-display mt-4 max-w-4xl text-[2.6rem] leading-[1.02] xs:text-[3rem] sm:mt-5 sm:text-7xl lg:text-8xl">
+        <h1 className="text-display mt-4 max-w-4xl text-[2.6rem] leading-[1.02] sm:mt-5 sm:text-7xl lg:text-8xl">
           <span className="block overflow-hidden pb-[0.06em]">
             <motion.span
               className="block"
