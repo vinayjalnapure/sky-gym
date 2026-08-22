@@ -1,13 +1,15 @@
 import { GYM, IMAGES, waLink } from "./data";
 import { Reveal, RevealImage } from "./Reveal";
+import { useLang, type TKey } from "./i18n";
 
-const STEPS = [
-  { num: "01", label: "Training" },
-  { num: "02", label: "Consistency" },
-  { num: "03", label: "Progress" },
+const STEPS: { num: string; label: TKey }[] = [
+  { num: "01", label: "about.step1" },
+  { num: "02", label: "about.step2" },
+  { num: "03", label: "about.step3" },
 ];
 
 export function About() {
+  const { t } = useLang();
   return (
     <section id="about" className="section-y relative">
       <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 sm:gap-12 sm:px-8 lg:grid-cols-2 lg:gap-16">
@@ -20,21 +22,19 @@ export function About() {
 
         <div>
           <Reveal>
-            <p className="eyebrow">About Sky Fitness</p>
+            <p className="eyebrow">{t("about.eyebrow")}</p>
             <h2 className="text-display mt-3 text-[2.1rem] leading-[0.98] sm:mt-4 sm:text-5xl lg:text-6xl">
-              Your training.
+              {t("about.title1")}
               <br />
-              Your goals.
+              {t("about.title2")}
               <br />
-              <span className="text-sky">Your journey.</span>
+              <span className="text-sky">{t("about.title3")}</span>
             </h2>
           </Reveal>
 
           <Reveal delay={0.1}>
             <p className="mt-4 max-w-xl text-[0.95rem] leading-relaxed text-soft sm:mt-6 sm:text-base">
-              Sky Fitness Gym is a place to focus on yourself, push your limits and build
-              consistency. Whether you're starting your fitness journey or looking to become
-              stronger, every workout is a step forward.
+              {t("about.body")}
             </p>
           </Reveal>
 
@@ -46,7 +46,7 @@ export function About() {
                     {s.num}
                   </span>
                   <span className="mt-1 block text-[0.62rem] font-semibold tracking-[0.12em] text-soft uppercase sm:text-xs sm:tracking-[0.18em]">
-                    {s.label}
+                    {t(s.label)}
                   </span>
                 </div>
               ))}
@@ -62,7 +62,7 @@ export function About() {
               rel="noopener noreferrer"
               className="focus-sky mt-7 block w-full bg-sky px-6 py-4 text-center text-[0.8rem] font-bold tracking-[0.16em] text-ink uppercase transition-colors hover:bg-sky-bright sm:mt-9 sm:inline-block sm:w-auto sm:px-8 sm:text-sm sm:tracking-[0.2em]"
             >
-              Start Your Journey
+              {t("about.cta")}
             </a>
           </Reveal>
         </div>
