@@ -2,8 +2,10 @@ import { useState } from "react";
 import { MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
 import { GYM, waLink } from "./data";
 import { Reveal } from "./Reveal";
+import { useLang } from "./i18n";
 
 export function Contact() {
+  const { t } = useLang();
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
 
   const onSubmit = (e: React.FormEvent) => {
@@ -21,9 +23,9 @@ export function Contact() {
     <section id="contact" className="section-y">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">Contact</p>
+          <p className="eyebrow">{t("contact.eyebrow")}</p>
           <h2 className="text-display mt-3 text-[2.1rem] sm:mt-4 sm:text-5xl lg:text-6xl">
-            Find <span className="text-sky">Sky Fitness</span>
+            {t("contact.title1")} <span className="text-sky">{t("contact.title2")}</span>
           </h2>
         </Reveal>
 
@@ -33,7 +35,7 @@ export function Contact() {
               <MapPin className="mt-1 h-5 w-5 shrink-0 text-sky" aria-hidden="true" />
               <address className="min-w-0 text-base leading-relaxed not-italic sm:text-lg">
                 <span className="text-display block text-xl sm:text-2xl">{GYM.name}</span>
-                <span className="text-soft">{GYM.area}</span>
+                <span className="text-soft">{t("area")}</span>
                 <a
                   href={GYM.tel}
                   className="focus-sky mt-2 block font-semibold text-sky hover:underline"
@@ -48,7 +50,7 @@ export function Contact() {
                 href={GYM.tel}
                 className="focus-sky flex items-center justify-center gap-2 bg-sky px-5 py-3.5 text-[0.78rem] font-bold tracking-[0.14em] text-ink uppercase transition-colors hover:bg-sky-bright sm:px-6 sm:text-sm sm:tracking-[0.16em]"
               >
-                <Phone className="h-4 w-4" /> Call Now
+                <Phone className="h-4 w-4" /> {t("contact.call")}
               </a>
               <a
                 href={waLink(`Hi ${GYM.name}, I would like to know more about the gym.`)}
@@ -56,7 +58,7 @@ export function Contact() {
                 rel="noopener noreferrer"
                 className="focus-sky flex items-center justify-center gap-2 border border-white/25 px-5 py-3.5 text-[0.78rem] font-bold tracking-[0.14em] text-white uppercase transition-colors hover:border-sky hover:text-sky sm:px-6 sm:text-sm sm:tracking-[0.16em]"
               >
-                <MessageCircle className="h-4 w-4" /> WhatsApp
+                <MessageCircle className="h-4 w-4" /> {t("contact.wa")}
               </a>
               <a
                 href={GYM.maps}
@@ -64,7 +66,7 @@ export function Contact() {
                 rel="noopener noreferrer"
                 className="focus-sky flex items-center justify-center gap-2 border border-white/25 px-5 py-3.5 text-[0.78rem] font-bold tracking-[0.14em] text-white uppercase transition-colors hover:border-sky hover:text-sky sm:px-6 sm:text-sm sm:tracking-[0.16em]"
               >
-                <Navigation className="h-4 w-4" /> Get Directions
+                <Navigation className="h-4 w-4" /> {t("contact.directions")}
               </a>
             </div>
 
@@ -82,14 +84,14 @@ export function Contact() {
 
           <Reveal delay={0.1}>
             <form onSubmit={onSubmit} className="glass-panel p-5 sm:p-8">
-              <h3 className="text-display text-xl sm:text-2xl">Send an enquiry</h3>
+              <h3 className="text-display text-xl sm:text-2xl">{t("contact.formTitle")}</h3>
               <p className="mt-2 text-sm text-soft">
-                Your details open in WhatsApp so we can reply quickly.
+                {t("contact.formSub")}
               </p>
               <div className="mt-6 space-y-4">
                 <div>
                   <label htmlFor="name" className="mb-2 block text-xs tracking-[0.18em] text-soft uppercase">
-                    Name
+                    {t("contact.name")}
                   </label>
                   <input
                     id="name"
@@ -97,12 +99,12 @@ export function Contact() {
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     className={field}
-                    placeholder="Your name"
+                    placeholder={t("contact.namePh")}
                   />
                 </div>
                 <div>
                   <label htmlFor="phone" className="mb-2 block text-xs tracking-[0.18em] text-soft uppercase">
-                    Phone Number
+                    {t("contact.phone")}
                   </label>
                   <input
                     id="phone"
@@ -111,12 +113,12 @@ export function Contact() {
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                     className={field}
-                    placeholder="Your phone number"
+                    placeholder={t("contact.phonePh")}
                   />
                 </div>
                 <div>
                   <label htmlFor="message" className="mb-2 block text-xs tracking-[0.18em] text-soft uppercase">
-                    Message
+                    {t("contact.message")}
                   </label>
                   <textarea
                     id="message"
@@ -125,7 +127,7 @@ export function Contact() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className={field}
-                    placeholder="What would you like to know?"
+                    placeholder={t("contact.messagePh")}
                   />
                 </div>
               </div>
@@ -133,7 +135,7 @@ export function Contact() {
                 type="submit"
                 className="focus-sky mt-6 w-full bg-sky px-6 py-4 text-[0.8rem] font-bold tracking-[0.16em] text-ink uppercase transition-colors hover:bg-sky-bright sm:text-sm sm:tracking-[0.2em]"
               >
-                Send Enquiry
+                {t("contact.submit")}
               </button>
             </form>
           </Reveal>

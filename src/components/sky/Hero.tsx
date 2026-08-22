@@ -1,8 +1,10 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { MessageCircle, ChevronDown } from "lucide-react";
 import { GYM, IMAGES, waLink } from "./data";
+import { useLang } from "./i18n";
 
 export function Hero() {
+  const { t } = useLang();
   const reduced = useReducedMotion();
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 700], [0, 90]);
@@ -34,7 +36,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="eyebrow"
         >
-          Sky Fitness Gym • Arali, Solapur
+          {t("hero.eyebrow")}
         </motion.p>
 
         <h1 className="text-display mt-4 max-w-4xl text-[2.6rem] leading-[1.02] sm:mt-5 sm:text-7xl lg:text-8xl">
@@ -45,7 +47,7 @@ export function Hero() {
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease }}
             >
-              Build Your
+              {t("hero.title1")}
             </motion.span>
           </span>
           <span className="block overflow-hidden pb-[0.06em]">
@@ -55,7 +57,7 @@ export function Hero() {
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.28, ease }}
             >
-              Stronger Self.
+              {t("hero.title2")}
             </motion.span>
           </span>
         </h1>
@@ -66,8 +68,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.5 }}
           className="mt-4 max-w-xl text-[0.95rem] leading-relaxed text-soft sm:mt-7 sm:text-lg"
         >
-          Train with purpose. Build strength. Build confidence. Become the best version of
-          yourself.
+          {t("hero.sub")}
         </motion.p>
 
         <motion.div
@@ -84,7 +85,7 @@ export function Hero() {
             rel="noopener noreferrer"
             className="focus-sky sky-glow bg-sky px-6 py-4 text-center text-[0.8rem] font-bold tracking-[0.16em] text-ink uppercase transition-colors hover:bg-sky-bright sm:px-9 sm:text-sm sm:tracking-[0.2em]"
           >
-            Join Now
+            {t("nav.join")}
           </a>
           <a
             href={waLink(`Hi ${GYM.name}, I have a question about the gym.`)}
@@ -92,7 +93,7 @@ export function Hero() {
             rel="noopener noreferrer"
             className="focus-sky flex items-center justify-center gap-2 border border-white/25 px-6 py-4 text-[0.8rem] font-bold tracking-[0.16em] text-white uppercase transition-colors hover:border-sky hover:text-sky sm:px-9 sm:text-sm sm:tracking-[0.2em]"
           >
-            <MessageCircle className="h-4 w-4" /> WhatsApp Us
+            <MessageCircle className="h-4 w-4" /> {t("hero.wa")}
           </a>
         </motion.div>
 
@@ -102,7 +103,8 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.8 }}
           className="mt-5 text-[0.8rem] text-white/70 sm:text-sm"
         >
-          Memberships starting at just <span className="font-semibold text-sky">₹600/month</span>
+          {t("hero.priceBefore")}{" "}
+          <span className="font-semibold text-sky">{t("hero.priceValue")}</span>
         </motion.p>
       </div>
 
@@ -110,7 +112,7 @@ export function Hero() {
         href="#about"
         className="focus-sky absolute inset-x-0 bottom-6 mx-auto hidden w-fit flex-col items-center gap-2 text-[0.65rem] font-semibold tracking-[0.3em] text-white/60 uppercase sm:flex"
       >
-        Scroll to explore
+        {t("hero.scroll")}
         <motion.span
           animate={reduced ? {} : { y: [0, 7, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}

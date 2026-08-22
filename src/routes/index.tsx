@@ -11,6 +11,7 @@ import { FinalCTA } from "@/components/sky/FinalCTA";
 import { Contact } from "@/components/sky/Contact";
 import { Footer } from "@/components/sky/Footer";
 import { FloatingCTA } from "@/components/sky/FloatingCTA";
+import { LanguageProvider } from "@/components/sky/i18n";
 
 const TITLE = "Sky Fitness Gym | Gym in Arali, Solapur";
 const DESCRIPTION =
@@ -67,7 +68,8 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-ink text-white">
+    <LanguageProvider>
+      <div className="min-h-screen bg-ink text-white">
       <Nav />
       <main>
         <Hero />
@@ -84,6 +86,7 @@ function Index() {
       <FloatingCTA />
       {/* Extra space so the mobile floating CTA bar never covers the footer text. */}
       <div className="h-16 sm:hidden" />
-    </div>
+      </div>
+    </LanguageProvider>
   );
 }

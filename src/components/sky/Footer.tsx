@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { GYM, IMAGES, NAV_LINKS } from "./data";
+import { useLang } from "./i18n";
+import { LanguageToggle } from "./LanguageToggle";
 
 export function Footer() {
+  const { t } = useLang();
   const [showCredits, setShowCredits] = useState(false);
 
   return (
@@ -17,9 +20,9 @@ export function Footer() {
           />
           <div className="min-w-0">
             <p className="text-display text-xl sm:text-2xl">
-              Sky <span className="text-sky">Fitness Gym</span>
+              {t("footer.brand1")} <span className="text-sky">{t("footer.brand2")}</span>
             </p>
-            <p className="mt-1 text-sm text-soft">{GYM.area}</p>
+            <p className="mt-1 text-sm text-soft">{t("area")}</p>
             <a href={GYM.tel} className="focus-sky mt-1 block text-sm font-semibold text-sky">
               {GYM.phoneDisplay}
             </a>
@@ -33,9 +36,10 @@ export function Footer() {
               href={l.href}
               className="focus-sky text-xs font-semibold tracking-[0.18em] text-soft uppercase hover:text-sky"
             >
-              {l.label}
+              {t(l.key)}
             </a>
           ))}
+          <LanguageToggle className="ml-1" />
         </nav>
       </div>
 
@@ -51,12 +55,12 @@ export function Footer() {
                   transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                   className="absolute bottom-full mb-3 w-64 rounded-xl border border-sky/25 bg-navy/95 p-4 text-center shadow-2xl backdrop-blur-md"
                 >
-                  <p className="text-display text-sm text-sky">Credits</p>
+                  <p className="text-display text-sm text-sky">{t("footer.credits")}</p>
                   <p className="mt-2 text-sm leading-snug text-white/90">
-                    Created by{" "}
+                    {t("footer.createdBy")}{" "}
                     <span className="font-semibold text-sky">Vinay Jalnapure</span>
                   </p>
-                  <p className="mt-1 text-xs tracking-wider text-white/60">Show it up</p>
+                  <p className="mt-1 text-xs tracking-wider text-white/60">{t("footer.tagline")}</p>
                   <div className="absolute -bottom-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rotate-45 border-b border-r border-sky/25 bg-navy/95" />
                 </motion.div>
               )}

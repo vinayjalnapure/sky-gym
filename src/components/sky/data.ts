@@ -1,3 +1,4 @@
+import type { TKey } from "./i18n";
 import logo from "@/assets/image.png.asset.json";
 import machineRed from "@/assets/image-2.png.asset.json";
 import dumbbells from "@/assets/image-3.png.asset.json";
@@ -62,10 +63,10 @@ export const GALLERY: { src: string; alt: string }[] = [
   },
 ];
 
-export const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Membership", href: "#membership" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+export const NAV_LINKS: { key: TKey; href: string }[] = [
+  { key: "nav.home", href: "#home" },
+  { key: "nav.about", href: "#about" },
+  { key: "nav.membership", href: "#membership" },
+  { key: "nav.gallery", href: "#gallery" },
+  { key: "nav.contact", href: "#contact" },
 ];
