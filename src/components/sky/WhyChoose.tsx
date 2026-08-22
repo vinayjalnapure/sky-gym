@@ -1,53 +1,25 @@
 import { Dumbbell, CalendarCheck, Flame, Repeat, Apple, ClipboardList } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { useLang, type TKey } from "./i18n";
 
-const BLOCKS = [
-  {
-    icon: Dumbbell,
-    num: "01",
-    title: "Build Strength",
-    copy: "Push yourself beyond yesterday.",
-  },
-  {
-    icon: CalendarCheck,
-    num: "02",
-    title: "Build Consistency",
-    copy: "Small sessions become big results.",
-  },
-  {
-    icon: Flame,
-    num: "03",
-    title: "Build Confidence",
-    copy: "Feel stronger inside and out.",
-  },
-  {
-    icon: Repeat,
-    num: "04",
-    title: "Build Your Routine",
-    copy: "Make fitness part of your lifestyle.",
-  },
-  {
-    icon: Apple,
-    num: "05",
-    title: "Personal Diet Plan",
-    copy: "Nutrition guidance that fuels your progress.",
-  },
-  {
-    icon: ClipboardList,
-    num: "06",
-    title: "Proper Workout Plan",
-    copy: "Structured training built around your goals.",
-  },
+const BLOCKS: { icon: typeof Dumbbell; num: string; title: TKey; copy: TKey }[] = [
+  { icon: Dumbbell, num: "01", title: "why.1.title", copy: "why.1.copy" },
+  { icon: CalendarCheck, num: "02", title: "why.2.title", copy: "why.2.copy" },
+  { icon: Flame, num: "03", title: "why.3.title", copy: "why.3.copy" },
+  { icon: Repeat, num: "04", title: "why.4.title", copy: "why.4.copy" },
+  { icon: Apple, num: "05", title: "why.5.title", copy: "why.5.copy" },
+  { icon: ClipboardList, num: "06", title: "why.6.title", copy: "why.6.copy" },
 ];
 
 export function WhyChoose() {
+  const { t } = useLang();
   return (
     <section className="section-y">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-3xl">
-          <p className="eyebrow">Why choose Sky Fitness</p>
+          <p className="eyebrow">{t("why.eyebrow")}</p>
           <h2 className="text-display mt-3 text-[2.1rem] sm:mt-4 sm:text-6xl lg:text-7xl">
-            More than a <span className="text-sky">workout.</span>
+            {t("why.title1")} <span className="text-sky">{t("why.title2")}</span>
           </h2>
         </Reveal>
 
@@ -60,8 +32,8 @@ export function WhyChoose() {
                   aria-hidden="true"
                 />
                 <div className="min-w-0 sm:order-3">
-                  <h3 className="text-display text-2xl leading-tight sm:text-4xl">{b.title}</h3>
-                  <p className="mt-1.5 text-[0.9rem] text-soft sm:mt-2 sm:text-base">{b.copy}</p>
+                  <h3 className="text-display text-2xl leading-tight sm:text-4xl">{t(b.title)}</h3>
+                  <p className="mt-1.5 text-[0.9rem] text-soft sm:mt-2 sm:text-base">{t(b.copy)}</p>
                 </div>
                 <span className="text-display hidden text-2xl text-sky/70 sm:order-1 sm:block sm:text-3xl">
                   {b.num}

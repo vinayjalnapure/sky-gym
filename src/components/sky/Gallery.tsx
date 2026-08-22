@@ -3,8 +3,10 @@ import { AnimatePresence, motion } from "motion/react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { GALLERY } from "./data";
 import { Reveal } from "./Reveal";
+import { useLang } from "./i18n";
 
 export function Gallery() {
+  const { t } = useLang();
   const [index, setIndex] = useState<number | null>(null);
   const touchX = useRef<number | null>(null);
 
@@ -41,9 +43,9 @@ export function Gallery() {
         <Reveal className="max-w-2xl">
           <p className="eyebrow">Gallery</p>
           <h2 className="text-display mt-3 text-[2.1rem] sm:mt-4 sm:text-5xl lg:text-6xl">
-            Inside <span className="text-sky">Sky Fitness</span>
+            {t("gallery.title1")} <span className="text-sky">{t("gallery.title2")}</span>
           </h2>
-          <p className="mt-3 text-[0.9rem] text-soft sm:mt-4 sm:text-base">See the environment. Feel the energy.</p>
+          <p className="mt-3 text-[0.9rem] text-soft sm:mt-4 sm:text-base">{t("gallery.sub")}</p>
         </Reveal>
 
         <div className="mt-8 grid auto-rows-[130px] grid-cols-2 gap-2.5 sm:mt-12 sm:auto-rows-[220px] sm:gap-4 lg:grid-cols-4">
