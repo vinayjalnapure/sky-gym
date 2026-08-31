@@ -161,13 +161,13 @@
   }
 }
 
-/* Sky Fitness Gym brand tokens (red theme) */
+/* Sky Fitness Gym brand tokens (sky blue theme) */
 :root {
-  --sky: oklch(0.62 0.22 25);
-  --sky-bright: oklch(0.68 0.23 28);
-  --navy: oklch(0.18 0.04 25);
-  --ink: oklch(0.12 0.02 25);
-  --soft: oklch(0.72 0.02 25);
+  --sky: oklch(0.72 0.16 210);
+  --sky-bright: oklch(0.78 0.17 210);
+  --navy: oklch(0.18 0.04 240);
+  --ink: oklch(0.12 0.02 240);
+  --soft: oklch(0.72 0.02 240);
 }
 
 body {
