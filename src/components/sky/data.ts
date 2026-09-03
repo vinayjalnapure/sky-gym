@@ -15,7 +15,7 @@ export const GYM = {
   tel: "tel:+917768070808",
   whatsapp: "https://wa.me/917768070808",
   // Google Maps link supplied by the gym owner.
-  maps: "https://share.google/BuSQBoQk4fbrJzIu5",
+  maps: "https://share.google/IfJNeF53UgOEFy0h9",
 };
 
 export const waLink = (message: string) =>
