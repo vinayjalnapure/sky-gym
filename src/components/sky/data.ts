@@ -11,9 +11,9 @@ import inclinePress from "@/assets/image-8.png.asset.json";
 export const GYM = {
   name: "Sky Fitness Gym",
   area: "Arali, Solapur, Maharashtra",
-  phoneDisplay: "7942696356",
-  tel: "tel:+917942696356",
-  whatsapp: "https://wa.me/917942696356",
+  phoneDisplay: "7768070808",
+  tel: "tel:+917768070808",
+  whatsapp: "https://wa.me/917768070808",
   // Google Maps link supplied by the gym owner.
   maps: "https://share.google/BuSQBoQk4fbrJzIu5",
 };

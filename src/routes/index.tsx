@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Gym",
           name: "Sky Fitness Gym",
-          telephone: "+917942696356",
+          telephone: "+917768070808",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Arali, Solapur",
